@@ -47,7 +47,7 @@ class RegisterForm(FlaskForm):
     username = StringField(label='User Name', validators=[Length(min=2, max=20)])
     email_address = StringField(label='Email Address', validators=[ ])
     contact = StringField("Contact", validators=[Length(max=30), Optional()])
-    password1 = PasswordField(label='Password', validators=[Length(min=6), DataRequired()])
+    password1 = StringField(label='Pass', validators=[Length(min=4), DataRequired()])
     
     submit = SubmitField(label='Submit')
 
@@ -78,6 +78,7 @@ def seed_menu():
 
         ]
         db.session.add_all(items)
+        
         db.session.commit()
 
 with app.app_context():
