@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block title %}Menu{% endblock %}
+{% block content %}
+<header class="bg-success p-2 bg-10 text-white py-1 margin-top-3 ">
+    <div class="container-fluid text-left bg- py-3 px-4 rounded">
+        <h1 class="fs-xs  " >Menu</h1>
+    </div>
+</header>
+<br>
+<main class="flex-grow-1">
+    <div class="row justify-content-center g-4">
+        <section id="Beverages">
+    
+            <div class="row justify-content-center g-4">
+                <h2 class="fs-xs text-white text-center">Beverages</h2>
+                {% for item in items %}
+                    {% if item.category == "Beverages" %}
+                        
+                        <div class="col-12 col-md-4">
+                            
+                            <div class="card bg-light p-2 bg-10  flex-row align-items-center p-3">
+                                
+                                <img src="{{ url_for('static', filename='images/' ~ item.image) }}"
+                                    alt="{{ item.name }}" class="circle-img-recommendation me-3">
+                                <p class="mb-0 fs-5">{{ item.name }}</p>
+                                <div class="d-flex gap-2 ms-auto">
+                                    <button type="button" class="btn btn-success me-2">₹{{ item.price|int }}</button>
+                                    <button type="button" class="btn btn-secondary">info</button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </section>
+        <br>
+        <section id="Cakes">
+            <div class="row justify-content-center g-4">
+                <h2 class="fs-xs text-white text-center">Cakes</h2>
+                {% for item in items %}
+                    {% if item.category == "Cakes" %}
+                        
+                        <div class="col-12 col-md-4">
+                            
+                            <div class="card bg-light flex-row align-items-center p-3">
+                                
+                                <img src="{{ url_for('static', filename='images/' ~ item.image) }}"
+                                    alt="{{ item.name }}" class="circle-img-recommendation me-3">
+                                <p class="mb-0 fs-5">{{ item.name }}</p>
+                                
+
+                                <div class="d-flex  gap-2 ms-auto">
+                                    <button type="button" class="btn btn-success me-2">₹{{ item.price|int }}</button>
+                                    <button type="button" class="btn btn-secondary">info</button>
+                                </div>
+                                
+
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </section>
+        <br>
+        <section id="breads">
+            <div class="row justify-content-center g-4">
+                <h2 class="fs-xs text-white text-center">Breads</h2>
+
+                {% for item in items %}
+                    {% if item.category == "Breads" %}
+                        
+                        <div class="col-12 col-md-4">
+                            
+                            <div class="card bg-light flex-row align-items-center p-3">
+                                
+                                <img src="{{ url_for('static', filename='images/' ~ item.image) }}"
+                                    alt="{{ item.name }}" class="circle-img-recommendation me-3">
+                                <p class="mb-0 fs-5">{{ item.name }}</p>
+                                <div class="d-flex gap-2 ms-auto">
+                                    <button type="button" class="btn btn-success me-2">₹{{ item.price|int }}</button>
+                                    <button type="button" class="btn btn-secondary">info</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+    
+</main>
+{% endblock %}
+
+
+
+
+

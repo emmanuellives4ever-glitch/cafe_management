@@ -1,0 +1,47 @@
+{%extends 'base.html'%}
+{% block title %} Register {% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <main class="flex-grow-1">
+    
+        <div class="container d-flex justify-content-center align-items-center h-100 py-5">
+            <div class="card shadow p-4" style="width: 450px;">
+                <form method="POST" class="form-register" style="color:white">
+                    {{ form.hidden_tag() }}
+                    <br>
+                    
+
+                    <h1 class="h3 mb-3 font-weight-normal" style="color: black;">Please Register</h1>
+                        {{ form.username.label }}
+                        {{ form.username(class="form-control type-text text-center",placeholder=' User Name')}}
+
+                        {{ form.email_address.label }}
+                        {{ form.email_address(class='form-control text-center', placeholder='Email Address ')}}
+
+                        {{ form.contact.label }}
+                        {{ form.contact(class='form-control text-center', placeholder='Contact')}}
+
+                        {{ form.password1.label }}
+                        {{ form.password1(class='form-control text-center', placeholder='Password')}}
+
+                        
+
+                        
+
+                        <br>
+                        {{ form.submit(class='btn   btn-lg btn-block btn-primary w-100')}}
+                        <br>
+
+                        <div class=" checkbox mb-3">
+                            <h6 style="color: black;"class="text-center"> Already have an account?
+                                <a class=" " href="{{url_for('login')}}" >Login</a>
+                            </h6>
+                        </div>
+
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+{% endblock %}

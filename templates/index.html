@@ -1,0 +1,88 @@
+{%extends "base.html"%}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<header class="bg-success p-2 bg-10 text-white py-1 margin-top-3 ">
+    <div class="container-fluid text-left bg- py-3 px-4 rounded">
+        <h1 class="fs-xs  " >Welcome to The Bake House!!</h1>
+    </div>
+</header>
+<p class="intro_web">We are delighted to have you here. Explore our menu and enjoy the finest baked goods in town!</p>
+<br>
+<main>
+    <h2 class="fs-4 text-center text-light">Handcrafted curations</h2>
+    <section class="container py-5">
+    <div class="row justify-content-center text-center g-4">
+
+        <div class="col-12 col-md-4">
+            <a href="{{url_for('menu')}}" class="circle-link">
+                <img src="{{ url_for('static', filename='images/coffee.jpg') }}"
+                     alt="Coffee" class="circle-img">
+                <h5 class="circle-label">Coffee</h5>
+            </a>
+        </div>
+
+        <div class="col-12 col-md-4">
+            <a href="{{url_for('menu')}}" class="circle-link">
+                <img src="{{ url_for('static', filename='images/cheeseecake.jpg') }}"
+                     alt="Cheese Cake" class="circle-img">
+                <h5 class="circle-label">Cakes</h5>
+            </a>
+        </div>
+
+        <div class="col-12 col-md-4">
+            <a href="{{url_for('menu')}}" class="circle-link">
+                <img src="{{ url_for('static', filename='images/breads.jpeg') }}"
+                     alt="Pastries" class="circle-img">
+                <h5 class="circle-label">Breads</h5>
+            </a>
+        </div>
+
+    </div>
+    <h2 class="fs-4 text-center text-light mt-5">Our Recommandations </h2>
+    <div class="row justify-content-center g-4">
+
+        <div class="col-12 col-md-4">
+            <div class="card bg-light flex-row align-items-center p-3">
+                <img src="{{ url_for('static', filename='images/pastries.jpeg') }}"
+                    alt="Red Velvet Cake" class="circle-img-recommendation me-3">
+                <p class="mb-0 fs-5">Red Velvet Cake</p>
+                    <span class="price-tag me-3">₹158</span>
+            </div>
+        </div>
+
+         <div class="col-12 col-md-4">
+            <div class="card bg-light flex-row align-items-center p-3">
+                
+                <img src="{{ url_for('static', filename='images/breads.jpeg') }}"
+                    alt="Sourdough Bread" class="circle-img-recommendation me-3">
+                <p class="mb-0 fs-5">Sourdough Bread</p>
+                    <span class="price-tag me-3">₹269</span>
+                 
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+            <div class="card bg-light flex-row align-items-center p-3">
+                <img src="{{ url_for('static', filename='images/cakes.jpeg') }}"
+                    alt="Chocolate Cake" class="circle-img-recommendation me-3">
+                <p class="mb-0 fs-5">Chocolate Cake</p>
+                    <span class="price-tag me-3">₹349</span>
+            </div>
+        </div> 
+    </div>
+
+
+
+
+
+
+    <div class="container text-center mt-4">
+        <a href="{{ url_for('menu') }}" class="btn btn-success ">View Full Menu</a>
+    </div>
+
+    
+    </section>
+</main>
+
+{% endblock %}
